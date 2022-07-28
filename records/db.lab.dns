@@ -1,0 +1,10 @@
+@               IN SOA machine1.lab.dns. root.machine1.lab.dns. (
+    2022092601  ;numero serial - deve ser incrementado a cada mudança neste arquivo
+    21600       ;refresh - das informações para slaves
+    1800        ;retry – tempo entre as tentativas
+    604800      ;expire - tempo para se desistir de contactar master
+    86400 )     ;mínimo - tempo a manter a informação no cache (TTL)
+                IN NS machine1.lab.dns.
+lab.dns. IN MX 10 machine2.lab.dns ;entrada MX (mail server)
+machine1       A 192.168.10.2
+machine2       A 192.168.10.3

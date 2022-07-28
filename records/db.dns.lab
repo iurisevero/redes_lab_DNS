@@ -1,0 +1,9 @@
+@               IN SOA machine1.lab.dns. root.machine1.lab.dns. (
+    2022092601
+    21600
+    1800
+    604800
+    86400 )
+                IN NS machine1.lab.dns.
+2               IN PTR machine1.lab.dns
+3               IN PTR machine2.lab.dns

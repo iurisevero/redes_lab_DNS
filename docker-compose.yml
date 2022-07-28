@@ -7,9 +7,10 @@ services:
     restart: always
     stdin_open: true
     tty: true
+    hostname: machine_1
     networks:
       static-network:
-        ipv4_address: 192.168.10.1
+        ipv4_address: 192.168.10.2
         aliases:
           - machine_1
 
@@ -19,14 +20,34 @@ services:
     restart: always
     stdin_open: true
     tty: true
+    hostname: machine_2
     networks:
       static-network:
-        ipv4_address: 192.168.10.2
+        ipv4_address: 192.168.10.3
         aliases:
           - machine_2
+
+  DNS_server:
+    container_name: DNS_server
+    image: ubuntu/bind9
+    volumes:
+      - ./records/db.dns.lab:/etc/bind/db.dns.lab
+      - ./records/db.lab.dns:/etc/bind/db.lab.dns
+      - ./data:/var/cache/bind/
+      - ./named.conf.local:/etc/bind/named.conf.local
+      - ./resolv.conf:/etc/resolv.conf
+    restart: always
+    stdin_open: true
+    tty: true
+    hostname: DNS_server
+    networks:
+      static-network:
+        ipv4_address: 192.168.10.4
+        aliases:
+          - DNS_server
 
 networks:
   static-network:
     ipam:
       config:
-        - subnet: 192.168.10.0/16
+        - subnet: 192.168.10.0/24

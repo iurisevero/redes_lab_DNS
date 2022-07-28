@@ -1,0 +1,9 @@
+zone "lab.dns" in {
+type master;
+file "/etc/bind/db.lab.dns";
+};
+
+zone "10.168.192.in-addr.arpa" in {
+type master;
+file "/etc/bind/db.dns.lab";
+};
