@@ -3,6 +3,8 @@ Repositório para desenvolvimento do laboratório de DNS da matéria de Fundamen
 
 A descrição da atividade realizada pode ser vista no documento [FRC_LAB_DNS.pdf](FRC_LAB_DNS.pdf)
 
+**Aluno:** Iuri de Souza Severo Alves   **Matrícula:** 17/0145514
+
 ## Objetivos
 
 **1 - Qual é o objetivo e como é o funcionamento do protocolo DNS.**
